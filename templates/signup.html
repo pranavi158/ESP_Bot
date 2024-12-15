@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign Up</title>
+<style>
+        /* Global Styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #eceff4, #bcd0e7);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            color: #333;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        h2 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #2c3e50;
+        }
+
+        form {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+            box-sizing: border-box;
+            animation: fadeIn 1s ease-in;
+        }
+
+        input[type="email"], input[type="password"] {
+            width: calc(100% - 20px);
+            padding: 12px;
+            margin: 15px 0;
+            border: 1px solid #cbd5e0;
+            border-radius: 5px;
+            font-size: 1rem;
+            box-sizing: border-box;
+            background-color: #f9f9f9;
+            transition: box-shadow 0.3s, border 0.3s;
+        }
+
+        input[type="email"]:focus, input[type="password"]:focus {
+            outline: none;
+            border: 1px solid #3498db;
+            box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(90deg, #3498db, #2c6ed5);
+            color: #fff;
+            border: none;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 15px;
+        }
+
+        button:hover {
+            background: linear-gradient(90deg, #297db5, #1c5fa3);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        a {
+            margin-top: 20px;
+            display: inline-block;
+            color: #3498db;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        a:hover {
+            color: #2980b9;
+        }
+
+        /* Keyframes Animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 600px) {
+            h2 {
+                font-size: 2.2rem;
+            }
+
+            input[type="email"], input[type="password"] {
+                font-size: 1rem;
+            }
+
+            button {
+                font-size: 1rem;
+                padding: 10px;
+            }
+
+            form {
+                padding: 20px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+<h2>Sign Up</h2>
+<form method="post">
+    <input type="email" name="email" placeholder="Email" required>
+    <input type="password" name="password" placeholder="Password" required>
+    <button type="submit">Sign Up</button>
+</form><br><br><br>
+
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+      <ul>
+          {% for message in messages %}
+              <li>{{ message }}</li>
+          {% endfor %}
+      </ul>
+  {% endif %}
+{% endwith %}
+
+<a href="{{ url_for('login') }}">Already have an account? Log In</a>
+</body>
+</html>

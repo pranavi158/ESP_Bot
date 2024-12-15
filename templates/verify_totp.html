@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Verify TOTP</title>
+    <style>
+        /* Add your existing styles here */
+    </style>
+</head>
+<body>
+
+<h2>TOTP Verification Required</h2>
+
+<form method="post">
+    <input type="text" name="token" placeholder="Enter your TOTP token" required /><br><br><br>
+    <button type="submit">Verify Token</button>
+</form>
+
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+      <ul>
+          {% for message in messages %}
+              <li>{{ message }}</li>
+          {% endfor %}
+      </ul>
+  {% endif %}
+{% endwith %}
+
+<a href="{{ url_for('logout') }}">Logout and Try Again</a>
+
+</body>
+</html>
