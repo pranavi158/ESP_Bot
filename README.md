@@ -1,8 +1,7 @@
-visit : http://127.0.0.1:5000
 # ESP Chatbot
 
 ## Overview
-The **ESP Chatbot** is an intelligent support solution designed to address inefficiencies in handling employee queries in large organizations. By leveraging cutting-edge technologies, the chatbot automates responses to HR, IT, and event-related questions while offering document processing features for summarization and keyword extraction. Its scalable architecture ensures optimal performance, maintaining response times under five seconds, even with concurrent users.
+The **ESP Chatbot** is an intelligent support solution designed to address inefficiencies in handling employee queries in large organizations. The chatbot automates responses to HR, IT, and event-related questions while offering document processing features for summarization and keyword extraction. Its scalable architecture ensures optimal performance, maintaining response times under five seconds, even with concurrent users.
 
 ## Features
 - **Natural Language Processing (NLP)**: Utilizes Dialogflow and spaCy to understand and respond to employee queries effectively.
